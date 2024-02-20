@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'SignInPage.dart';
 import 'CalendarPage.dart';
+import 'ProfilePage.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -38,6 +39,14 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Colors.pink[300],
         title: Text(widget.title),
         //leading: Icon(Icons.account_circle_rounded),
+        actions:<Widget>[
+          IconButton(
+              onPressed: (){
+                Navigator.push(context,MaterialPageRoute(builder: (context) => const ProfilePage(title: 'Profile',)));
+              },
+              icon: const Icon(Icons.account_circle_outlined),
+          )
+        ],
       ),
       drawer: Drawer(
         child: ListView(
@@ -105,6 +114,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
               ),
+              SizedBox(height: 40),
               Container(
                 padding: const EdgeInsets.all(10),
                 width: 390.0,
@@ -128,6 +138,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
               ),
+              SizedBox(height: 40),
               Container(
                 padding: const EdgeInsets.all(10),
                 child: Container(
@@ -169,6 +180,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
               ),
+              SizedBox(height: 40),
               Container(
                 padding: const EdgeInsets.all(10),
                 child:Container(
