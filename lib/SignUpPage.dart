@@ -1,6 +1,7 @@
 // TODO Implement this library.
 import 'package:flutter/material.dart';
 import 'WelcomePage.dart';
+import 'SignInPage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,20 +17,20 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor:Colors.pink[100],
         useMaterial3: true,
       ),
-      home: const SignInPage(title: 'Arushi app'),
+      home: const SignUpPage(title: 'Arushi app'),
     );
   }
 }
 
-class SignInPage extends StatefulWidget {
-  const SignInPage({super.key, required this.title});
+class SignUpPage extends StatefulWidget {
+  const SignUpPage({super.key, required this.title});
   final String title;
 
   @override
-  State<SignInPage> createState() => _SignInPageState();
+  State<SignUpPage> createState() => _SignUpPageState();
 }
 
-class _SignInPageState extends State<SignInPage> {
+class _SignUpPageState extends State<SignUpPage> {
   final unameController = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -55,7 +56,7 @@ class _SignInPageState extends State<SignInPage> {
               Container(
                 padding: const EdgeInsets.all(10),
                 child:Text(
-                  'Enter',
+                  'Create your account!',
                   style:TextStyle(
                     fontSize: 30,
                     color: Colors.pink[400],
@@ -68,8 +69,18 @@ class _SignInPageState extends State<SignInPage> {
                   controller: unameController,
                   decoration: InputDecoration(
                       border: OutlineInputBorder(),
-                      labelText: 'User Name',
-                      hintText: 'Enter valid username'
+                      labelText: 'Email',
+                      hintText: 'abcd@gmail.com'
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(10),
+                child: TextField(
+                  decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Username',
+                      hintText: '6-12 characters'
                   ),
                 ),
               ),
@@ -79,28 +90,31 @@ class _SignInPageState extends State<SignInPage> {
                   obscureText: true,
                   decoration: InputDecoration(
                       border: OutlineInputBorder(),
-                      labelText: 'Password',
-                      hintText: 'Enter your secure password'
+                      labelText: 'Create Password',
+                      hintText: '8-12 characters including special symbols',
                   ),
                 ),
               ),
-              ElevatedButton(
-                onPressed: (){
-                  //TODO FORGOT PASSWORD SCREEN
-                },
-                child: Text(
-                  'Forgot Password',
-                  style: TextStyle(color: Colors.pink, fontSize: 15),
+              Padding(
+                padding: EdgeInsets.all(10),
+                child: TextField(
+                  obscureText: true,
+                  decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Confirm Password',
+                  ),
                 ),
               ),
               Container(
                 height: 50,
                 width: 250,
                 decoration: BoxDecoration(
-                  color: Colors.pink,
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.pink[300],
+                  ),
                   onPressed: () {
                     Navigator.pop(context);
                     Navigator.push(
@@ -108,10 +122,26 @@ class _SignInPageState extends State<SignInPage> {
                         MaterialPageRoute(builder: (_) => WelcomePage(title: unameController.text)));
                   },
                   child: Text(
-                    'Sign In',
+                    'Sign Up',
                     style: TextStyle(
-                        color: Colors.pink,
+                        color: Colors.white,
                         fontSize: 25),
+                  ),
+                ),
+              ),
+              SizedBox(height:50),
+              InkWell(
+                onTap: (){
+                  Navigator.pop(context);
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => SignInPage(title:'SignIn')));
+                },
+                child: Text(
+                  'Already have an account?   Login',
+                  style: TextStyle(
+                    color: Colors.pink,
+                    fontSize: 18,
                   ),
                 ),
               ),

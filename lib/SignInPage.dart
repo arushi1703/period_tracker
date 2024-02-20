@@ -1,6 +1,7 @@
 // TODO Implement this library.
 import 'package:flutter/material.dart';
 import 'WelcomePage.dart';
+import 'SignUpPage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -120,11 +121,19 @@ class _SignInPageState extends State<SignInPage> {
               SizedBox(
                 height: 130,
               ),
-              Text(
-                'New User? Create Account',
-                style: TextStyle(
-                  color: Colors.pink,
-                  fontSize: 18,
+              InkWell(
+                onTap: (){
+                  Navigator.pop(context);
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => SignUpPage(title:'SignUp')));
+                },
+                child: Text(
+                  'New User? Create Account',
+                  style: TextStyle(
+                    color: Colors.pink,
+                    fontSize: 18,
+                  ),
                 ),
               ),
             ],

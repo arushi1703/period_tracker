@@ -56,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             ListTile(
-              title: const Text('Sign In'),
+              title: const Text('Sign In / Register'),
               onTap: () {
                 Navigator.pop(context);
                 Navigator.push(context,MaterialPageRoute(builder: (context) => const SignInPage(title: 'SignIn',)));
