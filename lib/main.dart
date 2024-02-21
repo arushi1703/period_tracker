@@ -36,15 +36,19 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.pink[300],
+        backgroundColor: Colors.pink[500],
         title: Text(widget.title),
         //leading: Icon(Icons.account_circle_rounded),
         actions:<Widget>[
           IconButton(
               onPressed: (){
-                Navigator.push(context,MaterialPageRoute(builder: (context) => const ProfilePage(title: 'Profile',)));
+                //Navigator.push(context,MaterialPageRoute(builder: (context) => const ProfilePage(title: 'Profile',)));
               },
-              icon: const Icon(Icons.account_circle_outlined),
+              icon: const Icon(
+                  Icons.settings,
+                size: 32,
+                color: Colors.white,
+              ),
           )
         ],
       ),
@@ -56,12 +60,10 @@ class _MyHomePageState extends State<MyHomePage> {
               decoration: BoxDecoration(
                 color: Colors.pink,
               ),
-              child: Text(
-                'WELCOME!',
-                style:TextStyle(
-                  fontSize: 30,
-                  color: Colors.white,
-                ),
+              child: Icon(
+                Icons.person,
+                color: Colors.white,
+                size: 60,
               ),
             ),
             ListTile(
@@ -72,7 +74,20 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
             ListTile(
-              title: const Text('Calender'),
+              title: const Text('H O M E'),
+              onTap: () {
+                Navigator.pop(context);
+                //Navigator.push(context,MaterialPageRoute(builder: (context) => const main(title: 'Home',)));
+              },
+            ),
+            ListTile(
+              title: const Text('P R O F I L E'),
+              onTap: () {
+                Navigator.push(context,MaterialPageRoute(builder: (context) => const ProfilePage(title: 'My Profile')));
+              },
+            ),
+            ListTile(
+              title: const Text('C A L A N D E R'),
               onTap: () {
                 Navigator.push(context,MaterialPageRoute(builder: (context) => const CalendarPage(title: 'Calendar',)));
               },
@@ -197,7 +212,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   child:ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      primary: Colors.pink, // Background color
+                      backgroundColor: Colors.pink, // Background color
                     ),
                     child: const Text(
                         'Log Period',

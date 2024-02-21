@@ -113,7 +113,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 ),
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.pink[300],
+                    backgroundColor: Colors.pink[300],
                   ),
                   onPressed: () {
                     Navigator.pop(context);

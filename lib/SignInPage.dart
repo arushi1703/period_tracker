@@ -56,11 +56,19 @@ class _SignInPageState extends State<SignInPage> {
               Container(
                 padding: const EdgeInsets.all(10),
                 child:Text(
-                  'Enter Details',
+                  'Welcome Back!',
                   style:TextStyle(
                     fontSize: 30,
                     color: Colors.pink[400],
                   ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(10),
+                child: Icon(
+                  Icons.account_circle_sharp,
+                  size: 50,
+                  color: Colors.pink[300],
                 ),
               ),
               Padding(
@@ -102,7 +110,7 @@ class _SignInPageState extends State<SignInPage> {
                 ),
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.pink[300],
+                    backgroundColor: Colors.pink[300],
                   ),
                   onPressed: () {
                     Navigator.pop(context);

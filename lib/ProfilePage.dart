@@ -1,7 +1,5 @@
 // TODO Implement this library.
 import 'package:flutter/material.dart';
-import 'WelcomePage.dart';
-import 'SignInPage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -36,7 +34,7 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.pink[300],
+        backgroundColor: Colors.pink[500],
         title: Text(widget.title),
       ),
       body:Container(
@@ -44,17 +42,36 @@ class _ProfilePageState extends State<ProfilePage> {
         height: double.infinity,
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("images/appbg.jpg"),
+            image: AssetImage("images/profilebg.jpg"),
             fit: BoxFit.cover,
           ),
         ),
-        child: Padding(
-          padding: const EdgeInsets.all(10),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
+        child: SingleChildScrollView(
+          child:Padding(
+            padding: const EdgeInsets.all(10),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+              Container(
+                height: 200,
+                width: 200,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(100),
+                  color: Colors.white,
+                ),
+                child: Center(
+                  child: Icon(
+                    Icons.person,
+                    color: Colors.pink,
+                    size: 170,
+                  ),
+                ),
+              ),
+                Container(
 
+                ),
             ],
+            ),
           ),
         ),
       ),
