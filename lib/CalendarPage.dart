@@ -3,25 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Period Tracker',
-      theme: ThemeData(
-        scaffoldBackgroundColor:Colors.pink[100],
-        useMaterial3: true,
-      ),
-      home: const CalendarPage(title: 'Arushi app'),
-    );
-  }
-}
-
 class CalendarPage extends StatefulWidget {
   const CalendarPage({super.key, required this.title});
   final String title;

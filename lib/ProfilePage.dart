@@ -1,24 +1,7 @@
 // TODO Implement this library.
 import 'package:flutter/material.dart';
+import 'package:period_app/ProfileTextField.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Period Tracker',
-      theme: ThemeData(
-        scaffoldBackgroundColor:Colors.pink[100],
-        useMaterial3: true,
-      ),
-      home: const ProfilePage(title: 'Arushi app'),
-    );
-  }
-}
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key, required this.title});
@@ -53,8 +36,8 @@ class _ProfilePageState extends State<ProfilePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
               Container(
-                height: 200,
-                width: 200,
+                height: 170,
+                width: 170,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(100),
                   color: Colors.white,
@@ -63,13 +46,22 @@ class _ProfilePageState extends State<ProfilePage> {
                   child: Icon(
                     Icons.person,
                     color: Colors.pink,
-                    size: 170,
+                    size: 150,
                   ),
                 ),
               ),
-                Container(
-
+                SizedBox(height: 20),
+                Text(
+                  'arushi3002@gmail.com',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 22,
+                  ),
                 ),
+                SizedBox(height: 100),
+                
+                //TextF(prefix: Icon(Icons.person), hinttext: 'username'),
+              
             ],
             ),
           ),
