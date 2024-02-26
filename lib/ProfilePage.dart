@@ -31,11 +31,11 @@ class _ProfilePageState extends State<ProfilePage> {
         ),
         child: SingleChildScrollView(
           child:Padding(
-            padding: const EdgeInsets.all(10),
+            padding: const EdgeInsets.all(30),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-              Container(
+                Container(
                 height: 170,
                 width: 170,
                 decoration: BoxDecoration(
@@ -50,18 +50,23 @@ class _ProfilePageState extends State<ProfilePage> {
                   ),
                 ),
               ),
-                SizedBox(height: 20),
-                Text(
-                  'arushi3002@gmail.com',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 22,
+                SizedBox(height: 90),
+                TextF(prefix: Icon(Icons.person), hinttext: 'username'),
+                TextF(prefix: Icon(Icons.phone_android_sharp), hinttext: 'mobile no.'),
+                TextF(prefix: Icon(Icons.email_rounded), hinttext: 'email'),
+                SizedBox(height: 50),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.pink,
                   ),
+                    onPressed: (){},
+                    child: Text(
+                      'Edit Profile',
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
                 ),
-                SizedBox(height: 100),
-                
-                //TextF(prefix: Icon(Icons.person), hinttext: 'username'),
-              
             ],
             ),
           ),
