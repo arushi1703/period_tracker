@@ -100,7 +100,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     Navigator.pop(context);
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (_) => WelcomePage(title: unameController.text)));
+                        MaterialPageRoute(builder: (_) => WelcomePage(name: unameController.text)));
                   },
                   child: Text(
                     'Sign Up',

@@ -97,7 +97,7 @@ class _SignInPageState extends State<SignInPage> {
                     Navigator.pop(context);
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (_) => WelcomePage(title: unameController.text)));
+                        MaterialPageRoute(builder: (_) => WelcomePage(name: unameController.text)));
                   },
                   child: Text(
                     'Sign In',

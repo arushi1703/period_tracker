@@ -2,8 +2,8 @@
 import 'package:flutter/material.dart';
 
 class WelcomePage extends StatefulWidget {
-  const WelcomePage({Key? key, required this.title}) : super(key: key);
-  final String title;
+  const WelcomePage({Key? key, required this.name}) : super(key: key);
+  final String name;
 
   @override
   State<WelcomePage> createState() => _WelcomePageState();
@@ -16,7 +16,7 @@ class _WelcomePageState extends State<WelcomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.pink[300],
-        title: Text(widget.title),
+        title: Text(widget.name),
       ),
       body:Container(
         width: double.infinity,
@@ -34,7 +34,7 @@ class _WelcomePageState extends State<WelcomePage> {
             children: <Widget>[
               Container(
                child: Text(
-                 'Welcome ${widget.title} ! ',
+                 'Welcome ${widget.name} ! ',
                   style: TextStyle(fontSize: 30),
                ),
               ),
