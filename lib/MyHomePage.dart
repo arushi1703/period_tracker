@@ -68,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
             ListTile(
-              title: const Text('C A L A N D E R'),
+              title: const Text('C A L E N D A R'),
               onTap: () {
                 Navigator.push(context,MaterialPageRoute(builder: (context) => const CalendarPage(title: 'Calendar',)));
               },
