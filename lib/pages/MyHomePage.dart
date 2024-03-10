@@ -1,12 +1,11 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'SignInPage.dart';
+//import 'SignInPage.dart';
 import 'CalendarPage.dart';
 import 'ProfilePage.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-  final String title;
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -15,10 +14,11 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    final user=FirebaseAuth.instance.currentUser!;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.pink[500],
-        title: Text(widget.title),
+        title: Text('Period Tracker'),
         //leading: Icon(Icons.account_circle_rounded),
         actions:<Widget>[
           IconButton(
@@ -48,11 +48,8 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             ListTile(
-              title: const Text('Sign In / Register'),
-              onTap: () {
-                Navigator.pop(context);
-                Navigator.push(context,MaterialPageRoute(builder: (context) => const SignInPage(title: 'SignIn',)));
-              },
+              title: Text(user.email!),
+              onTap: () {},
             ),
             ListTile(
               title: const Text('H O M E'),
@@ -75,10 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             ListTile(
               title: const Text('Log Out'),
-              onTap: () {
-                Navigator.pop(context);
-                Navigator.push(context,MaterialPageRoute(builder: (context) => const SignInPage(title: 'SignIn',)));
-              },
+              onTap: () => FirebaseAuth.instance.signOut(),
             ),
           ],
         ),

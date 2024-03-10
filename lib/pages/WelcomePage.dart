@@ -1,5 +1,6 @@
 // TODO Implement this library.
 import 'package:flutter/material.dart';
+import 'package:period_app/pages/MyHomePage.dart';
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({Key? key, required this.name}) : super(key: key);
@@ -41,6 +42,7 @@ class _WelcomePageState extends State<WelcomePage> {
               ElevatedButton(
                 onPressed: () {
                   Navigator.pop(context);
+                  Navigator.push(context,MaterialPageRoute(builder: (context) => MyHomePage()));
                 },
                 child: Text("Lets get started!",
                   style: TextStyle(
